@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "test title"
+title                    : "Yiqun Raymond Wang"
 title_separator          : "-"
-name                     : &name "test name"
+name                     : &name "Yiqun Raymond Wang"
 description              : &description "test description"
 url                      : "https://raymond-yiqunwang.github.io/"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ analytics:
 author:
   name             : "Yiqun Raymond Wang"
   avatar           : "RWang.png"
-  bio              : "Computational Chemist <br> Research Scientist at ByteDance AI Lab"
+  bio              : "Computational Chemist <br> <br> Research Scientist at ByteDance AI Lab"
   location         : "Mountain View, CA"
   employer         : 
   googlescholar    : "https://scholar.google.com/citations?user=Z_9piXQAAAAJ&hl=en"
@@ -98,8 +98,8 @@ author:
   keybase          :
   instagram        : 
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/yiqun-raymond-wang-dot-science/"
-  orcid            : "0000-0002-1457-0085"
+  linkedin         : "https://www.linkedin.com/in/yiqun-raymond-wang-dot-science"
+  orcid            : "https://orcid.org/0000-0002-1457-0085"
   pinterest        :
   soundcloud       :
   stackoverflow    : 
