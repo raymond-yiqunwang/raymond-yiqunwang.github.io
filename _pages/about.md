@@ -11,9 +11,12 @@ redirect_from:
 {% include base_path %}
 
 Aloha! I am Raymond Wang, a Research Scientist at ByteDance AI Lab. ...
+![Alt text](./fig1.png)
+
 
 
 ## My Work And Research
+<img src="fig1.png" alt="drawing" width="800"/>
 I build quantitative numerical/statistical models to simulate and understand complex chemical and biological systems. 
 My doctoral research was focused on computational chemistry and cheminformatics, 
 where I developed post-Hartree-Fock models to accurately solve the Schrodinger euqation for quantum molecular systems.

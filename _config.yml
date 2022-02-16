@@ -143,6 +143,8 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - .DS_Store
+  - "*/.DS_Store"
 keep_files:
   - .git
   - .svn
