@@ -1,20 +1,17 @@
 # main links links
 main:
-  - title: "Publications"
-    url: /articles/
+  - title: "Quantum Chemistry"
+    url: /quantum_chemistry/
 
-  - title: "Talks"
-    url: /talks/    
+  - title: "Materials Science"
+    url: /materials_science/
     
-  - title: "Expressions"
-    url: /expressions/
+  - title: "Drug Discovery"
+    url: /drug_discovery/
 
-  - title: "Teaching"
-    url: /teaching/
+  - title: "Fishing"
+    url: /fishing/
         
-  - title: "Blog Posts"
-    url: /year-archive/
-    
   - title: "CV"
     url: /cv/
   

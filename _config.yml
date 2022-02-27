@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Yiqun Raymond Wang"
+title                    : "Home"
 title_separator          : "-"
-name                     : &name "Yiqun Raymond Wang"
-description              : &description "test description"
+name                     : &name "Raymond Yiqun Wang"
+description              : 
 url                      : "https://raymond-yiqunwang.github.io/"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "raymond-yiqunwang/raymond-yiqunwang.github.io"
@@ -78,7 +78,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Yiqun Raymond Wang"
+  name             : "Raymond Yiqun Wang"
   avatar           : "RWang.png"
   bio              : "Computational Chemist <br> <br> Research Scientist at ByteDance AI Lab"
   location         : "Mountain View, CA"
@@ -97,7 +97,7 @@ author:
   keybase          :
   instagram        : 
   lastfm           :
-  linkedin         : "yiqun-raymond-wang-dot-science"
+  linkedin         : "raymond-yiqun-wang"
   orcid            : "https://orcid.org/0000-0002-1457-0085"
   pinterest        :
   soundcloud       :
@@ -259,12 +259,11 @@ timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database
 
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
   - jekyll-redirect-from
 # mimic GitHub Pages with --safe
 whitelist:
@@ -272,7 +271,6 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
 
 
 # Archives
