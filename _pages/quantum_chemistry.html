@@ -6,23 +6,100 @@ author_profile: true
 
 {% include base_path %}
 
-<h3>Active Space Decomposition</h3>
+<h2>Introduction to The Wave Function Approach</h2>
 
 <p style="text-align: justify">
 
+
+Our main objective is to solve the time-independent Schrödinger equation (<strong>Figure 1a</strong>),
+from which we could determine physical properties of a molecule, in theory.
+Computationally solving this equation comprises constructing the Hamiltonian operator 
+and formulating the wave functions.
+Numerically speaking, we employ an eigen-solver (<strong>Figure 1b</strong>) to approximately diagonalize 
+a huge Hermitian matrix (the Hamiltonian) within a subspace of the entire Hilbert space 
+to obtain the ground state wave function (based on the linear variational method).
+
+<br><br>
+
+However, the time complexity of this step grows exponentially w.r.t. the system size,
+which makes simulating large molecules (e.g., proteins) 
+at quantum mechanical level extremely challenging.
+Therefore, theoretical chemists develop novel methods to 
+find a balance between "accuracy" and "efficiency".
+In other words, we would like to simulate a quantum molecular system
+as accurately as possible, with an affordable computational cost.
+</p>
+
+<br>
+
 <p align="center">
-<img src="/figures/QChem_ASD.jpeg" width="95%">
+<img src="/figures/QChem_ASD.jpeg" width="100%">
 <br><em><font size="1">
-caption
+Figure 1. Overview of Active Space Decomposition (ASD) algorithm.
 </font></em>
 </p>
 
-<h3>Douglas-Kroll-Hess Scalar Relativistic Approximation</h3>
+<h2>Active Space Decomposition</h2>
+
+<p style="text-align: justify">
+
+The main idea of Active Space Decomposition (ASD) algorithm is about 
+"<strong>divide and conquer</strong>". 
+Specifically, we virtually divide the entire molecule into
+several fragments, i.e., functional groups (<strong>Figure 1c</strong>).
+Then, within each molecular fragment, we optimize for the most significant
+electronic configurations to properly represent the state of the fragment.
+The way we determine the importance of configurations is similar in nature
+to that in density matrix renormalization group (DMRG) algorithm.
+For small molecules, we could take all electronic configurations into consideration,
+and reconstruct the exact total wave function without loss of information.
+For larger systems, we discard the less significant configurations of each fragment,
+and combine the most informative states from all fragments to reconstruct the
+molecular electronic wave function.
+This way, we can control how much information we want to keep, 
+hence achieving a balance between "accuracy" and "efficiency".
+
+<br><br>
+
+To further optimize for the ground state electronic structures, I also employed
+second-order orbital optimization on top of the ASD algorithm (<strong>Figure 1d</strong>).
+In a nutshell, this step is about iteratively 
+solving the eigen-decomposition problem within the current subspace
+and optimizing for a better subspace in which the ground truth lies.
+</p>
+
+<h2>Douglas-Kroll-Hess Scalar Relativistic Approximation</h2>
+
+<p style="text-align: justify">
+
+I am also interested in considering relativistic effects for quantum molecular systems.
+Relativistic effects are particularly important for molecules containing
+transition-metal ions, e.g., Cu, Fe, which are essential elements in human body.
+</p>
 
 <p align="center">
 <img src="/figures/QChem_DKH.jpeg" width="100%">
 <br><em><font size="1">
-caption
+Figure 2. Workflow of the self-consistent field solver with
+<br>
+Douglas-Kroll-Hess scalar relativistic approximation.
 </font></em>
 </p>
+
+<p style="text-align: justify">
+
+I developed scalar relativistic models based on Douglas-Kroll-Hess algorithm.
+Compared with non-relativistic models, our formulation is slightly more complicated
+and requires higher numerical accuracy.
+The theoretical details is out of the scope of this post, but I am happy to discuss
+if you are interested.
+I personally find making derivations and implementing these models extremely exciting,
+especially when the first time my model works.  :)
+
+<br><br>
+
+<strong>At last, please feel free to reach out to me for further discussions 
+if you find any of the aforementioned topics interesting!</strong>
+</p>
+
 

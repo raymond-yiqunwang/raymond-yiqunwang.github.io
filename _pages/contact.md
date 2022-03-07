@@ -6,8 +6,9 @@ author_profile: true
 ---
 
 <p style="text-align: justify">
-The preferred contact information is listed below (as well as on the sidebar). 
-I am a responsive person who is very willing to get to know more people with various backgrounds.
+The preferred contact information is listed below (also available on the sidebar). 
+I am a responsive person who is very willing to get to know more people with various backgrounds 
+and explore new ideas.
 <br><br>
 Please do not hesitate to reach out to me and let's keep connected!
 </p>
