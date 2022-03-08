@@ -70,9 +70,9 @@ social:
   links: # An array of links to social media profiles
 # Analytics
 analytics:
-  provider               :  
+  provider               :  "google-universal"
   google:
-    tracking_id          : 
+    tracking_id          :  "UA-222442722-1"
 
 
 
