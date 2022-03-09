@@ -9,17 +9,15 @@ author_profile: true
 <h2><i>Ab Initio</i> Density Functional Theory Simulations</h2>
 
 
-<p align="center">
+<p align="justify">
 <img src="/figures/MSE_DFT.jpeg" width="100%"/>
-<br><em><font size="3">
-Figure 1. (a) The range in resistivity accessible across the
+<br><em><font size="2">
+<strong>Figure 1</strong> |
+(a) The range in resistivity accessible across the
 phase transition of a variety of
-<br>
 materials exhibiting metal-insulator transitions.
 (b) We study the structure-property
-<br>
 relationship of crystals using first principles simulations and
-<br>
 (c) compare with experimental results.
 </font></em>
 </p>
@@ -41,10 +39,11 @@ Indeed, inorganic crystals are quite different from molecular systems
 I developed an adaptive optimization engine for electronic materials design.
 </p>
 
-<p align="center">
+<p align="justify">
 <img src="/figures/MSE_AOE.jpeg" width="100%"/>
-<br><em><font size="3">
-Figure 2. Upper panel: The workflow of a conventional feature-based machine learning model.
+<br><em><font size="2">
+<strong>Figure 2</strong> |
+Upper panel: The workflow of a conventional feature-based machine learning model.
 Lower panel: The adaptive materials discovery scheme.
 </font></em>
 </p>
@@ -62,24 +61,27 @@ for existing materials within the design space.
 Its size grows as more candidate materials are evaluated during the adaptive optimization process. 
 </p>
 
-<p align="center">
+<p align="justify">
 <img src="/figures/MOBO.gif" width="90%"/>
-<br><em><font size="3">
-Animation: The adaptive optimization history.
+<br><em><font size="2">
+<strong>Animation</strong> |
+The adaptive optimization history, where grey diamonds are the initial DOE set,
+blue circles are newly explored compositions,
+and orange stars form the design Pareto front.
 </font></em>
 </p>
 
 <p style="text-align: justify">
 <strong>Featureless learning</strong> involves directly learning from the chemical composition 
 of materials comprising the data repository by mapping each compositional variable 
-into a two-dimensional latent space (spanned by z1 and z2) using maximum likelihood estimation, 
+into a two-dimensional latent space using maximum likelihood estimation, 
 which enables the construction of a latent variable Gaussian process (LVGP) surrogate model. 
 knowledge within the data repository. 
 <strong>Composition optimization</strong>: Multi-objective Bayesian optimization 
 is then performed with the LVGP models to obtain the next candidate material composition 
 with the highest expected maximin improvement.
 The iterative optimization continues until all compounds satisfying the objectives are discovered, 
-forming the Pareto front, or research resources expire.
+forming the Pareto front, or research resources are exhausted.
 </p>
 
 
@@ -94,12 +96,14 @@ a deep neural network.
 We used structure factors in the form of 3D point cloud to uniquely represent
 crystal structures and chemical compositions, and analyzed the correlation between
 symmetry, electron density, and materials properties.
+This work is still under review at <i>Physical Review Research</i>.
 </p>
 
-<p align="center">
+<p align="justify">
 <img src="/figures/MSE_deepKNet.jpeg" width="100%"/>
-<br><em><font size="3">
-Figure 3. Learning the Fourier space crystal structure genome for property classificaitons.
+<br><em><font size="2">
+<strong>Figure 3</strong> |
+Learning the Fourier space crystal structure genome for property classificaitons.
 </font></em>
 </p>
 
@@ -109,12 +113,16 @@ Figure 3. Learning the Fourier space crystal structure genome for property class
 
 Lastly, I explore the potential of using symbolic learning to reveal some governing physical
 laws from a large amount of data.
+Symbolic regression has recently garnered much attention from the scientific research
+community owing to its form-free learning mechanism,
+which makes it an ideal tool for materials scientists to analyze their experimental data.
 </p>
 
-<p align="center">
+<p align="justify">
 <img src="/figures/MSE_GPSR.jpeg" width="100%"/>
-<br><em><font size="3">
-Figure 4. Symbolic regression and its applications in materials science.
+<br><em><font size="2">
+<strong>Figure 4</strong> |
+Symbolic regression and its applications in materials science.
 </font></em>
 </p>
 
