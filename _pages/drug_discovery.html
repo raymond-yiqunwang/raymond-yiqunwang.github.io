@@ -1,53 +1,145 @@
 ---
 permalink: /drug_discovery/
-title: "AI-accelerated Drug Design & Discovery"
+title: "AI-Accelerated Drug Design & Discovery"
 author_profile: true
 ---
 
 {% include base_path %}
 
-<h3>Decoding Intermolecular Interactions from a Data-driven Perspective</h3>
+<p style="text-align: justify">
+    Drawing from my prior research experience in quantum chemistry and materials physics,
+    I believe that integrating insights from physics into deep learning architectures will
+    offer a potent complementary approach towards solving long-standing challenges in drug discovery
+    (e.g., high-throughput quantum mechanical-level molecular dynamics simulations).
+    The good news is, we have seen more recent SOTA models drawing inspiration from 
+    fundamental physics concepts, e.g., the principles behind diffusion models 
+    can be traced back to non-equilibrium thermodynamics. 
+    Below are a few relevant drug discovery projects that I have been working on.
+</p>
+
+<h2>Exploring Protein Conformation Space with Diffusion Generative Modeling</h2>
 
 <p style="text-align: justify">
+    In the intricate realm of biochemistry, the distribution of protein 3D conformations (i.e., the Boltzmann distribution) 
+    plays a pivotal role in dictating cellular behavior and function. 
+    However, comprehending the vast conformational space of these proteins remains a challenging endeavor. 
+</p>
 
-In our lab, researchers with various education background (e.g., AI, chemistry, biology)
-work collaboratively on the most challenging biological problems.
-Our goal is to develop novel AI models to understand biomolecular systems and 
-reveal the governing physical laws from a data-driven perspective.
+<p style="text-align: justify">
+    Leveraging the power of diffusion generative modeling, protein language models, folding models, 
+    and molecular dynamics force fields, our on-going project ventures into the potential energy landscape of protein conformations.
+</p>
 
-<br><br>
+<p style="text-align: justify">
+    We aim to provide a more holistic and detailed understanding of protein thermodynamic properties 
+    as well as the transition pathways between different functional states.
+    Such insights are crucial for predicting protein behaviors in varying conditions, and designing therapeutic strategies in drug discovery.
+</p>
 
-Specifically, I am interested in teaching AI models to think
-like a theoretical chemist (<strong>Figure 1</strong>).
-Instead of purely making inference from data, I try to enforce the model to
-learn physical rules (e.g., symmetry constraints) by hard-coding them into the
-model architecture. I apologize for not being able to introduce too many details here
-at this stage. However, I would be happy to have individual discussions to share
-some ideas and explore potential collaborations. In addition, our team will share
-our research advances with the community once we make significant breakthroughs.
-Cheers.
-
+<div style="display: flex; justify-content: space-between;">
+    <img src="/figures/1k0n_A.gif" alt="Description of first GIF" width="33.4%">
+    <img src="/figures/1qs8_B.gif" alt="Description of second GIF" width="33.4%">
+    <img src="/figures/1uxm_K.gif" alt="Description of third GIF" width="33.4%">
+</div>
+<div style="display: flex; justify-content: space-between;">
+    <img src="/figures/3ifa_A.gif" alt="Description of first GIF" width="33.4%">
+    <img src="/figures/3m1b_F.gif" alt="Description of second GIF" width="33.4%">
+    <img src="/figures/4qhf_A.gif" alt="Description of third GIF" width="33.4%">
+</div>
+<p align="center">
+<em><font size="2">
+    <strong>Animation</strong> | Sampling protein conformations through a diffusion process.
+</em></font>
 </p>
 
 <br>
+<h2>Learning Harmonic Molecular Surface Representations</h2>
 
-<p align="justify">
-<img src="/figures/drugAI_demo.jpeg" width="100%"/>
-<br><em><font size="2">
-<strong>Figure 1</strong> | Overview of what I am currently working on. 
-(a) The interaction of protein and drug molecule constitutes of
-(b) multiple intermolecular interaction components.  We employ
-(c) group theory to systematically describe these interactions and construct machine
-learning models to find the hidden patterns buried underneath tons of experimental data.
+<p align="center">
+<img src="/figures/drug_manifold.png" width="60%">
+</p>
+<p style="text-align: justify"></p>
+<em><font size="2">
+    <strong>Figure</strong> | Multi-resolution molecular surface representation as a Riemannian manifold. 
+    Geometry processing techniques can be employed to decorate protein surface geometry and chemistry 
+    in a similar manner to crafting a key (e.g., an antibody) for a specific lock (e.g., an antigen).
 </font></em>
 </p>
 
-<br>
+<p style="text-align: justify">
+Our objective here is to properly encode the chemical and geometric information of protein systems
+for downstream applications, e.g., predicting whether an antibody could bind with a virus.
+However, protein-protein interactions are governed by sophisticated physical rules 
+(e.g., hydrogen bond, hydrophobic interactions, etc.), hindering high-throughput screening of active reagents. 
+Our proposed solution is based on a simple analogy: 
+<br><br>
+<font size="3">
+<em>Predicting protein-protein interactions is akin to piecing together a puzzle!</em>
+</font>
+<br><br>
+We argue that the necessary and sufficient condition for two proteins to interact is that
+they exhibit matching geometry (i.e., shape complementarity) 
+as well as energetically favorable chemical patterns (e.g., opposite charge, similar hydrophobicity, etc.).
+</p>
 
 <p style="text-align: justify">
-
-<strong><i> If you find any of these research topics interesting, please do not
-hesitate to reach out to me and I'd be happy to have further discussions!</i></strong>
+<img src="/figures/drug_puzzle.png" width="100%">
+<br><em><font size="2">
+    <strong>Figure</strong> | 
+    <b>a.</b> Shape complementarity and chemical affinity co-determine protein-protein interactions,
+    just like piecing together a puzzle. 
+    <b>b.</b> We show that protein-protein interfaces indeed exhibit matching geometric and chemical patterns
+    from the molecular surface perspective.
+</em></font>
 </p>
+
+<p style="text-align: justify">
+Following this idea, we propose a representation learning method to train a neural network to
+encode both geometric and chemical information of a protein surface.
+Specifically, the molecular surface is represented as a 2D Riemannian manifold, which adopts a 
+set of Laplace-Beltrami eigenfunctions. The associated eigendecomposition is solely determined by 
+the surface geometry, hence also getting the name <em>"Shape DNA"</em>.
+Chemical attributes can be mapped as scalar functions on the manifold, 
+which could alternatively be represented as the linear combination coefficients in its eigenspace.
+</p>
+
+<p align="center">
+<img src="/figures/drug_expansion.png" width="99%">
+<br><em><font size="2">
+    <strong>Figure</strong> | The electrostatic potential on a molecular surface manifold
+    can be expanded as the linear combination of its Laplace-Beltrami eigenfunctions.
+</em></font></p>
+
+<p style="text-align: justify">
+We then train a neural network to learn from known protein-protein interaction pairs
+and summarize their common patterns. Intuitively, our model learns to extract relevant 
+geometric and chemical features that are correlated with binding, which helps it
+predict a reasonable binding site and subsequently outputs a docked protein complex structure.
+Specifically we employ functional maps to establish interface correspondence 
+and realize protein docking through rigid transformations.
+The network architecture is shown below.
+Please see 
+<a href="https://arxiv.org/abs/2303.15520">here</a> 
+for more details.
+</p>
+
+
+
+<p align="center">
+<img src="/figures/drug_docking.png" width="99%">
+<br><em><font size="2">
+    <strong>Figure</strong> | Rigid protein docking pipeline.
+</em></font>
+</p>
+
+
+<h2>Molecular Geometric Deep Learning</h2>
+
+<p align="center">
+<img src="/figures/drug_geom.png" width="80%">
+<br><em><font size="2">
+    <strong>Figure</strong> | Schematic protein-ligand complex with learnable inter-/intra-molecular interactions.
+    The objective is to efficiently design candidate drug molecules exhibiting desirable properties.
+</em></font></p>
 
 

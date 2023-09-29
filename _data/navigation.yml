@@ -1,19 +1,16 @@
 # main links links
 main:
+  - title: "AI Drug Discovery"
+    url: /drug_discovery/
+  
+  - title: "Electronic Materials Design"
+    url: /materials_design/
+
   - title: "Quantum Chemistry"
     url: /quantum_chemistry/
 
-  - title: "Materials Science"
-    url: /materials_science/
-    
-  - title: "Drug Discovery"
-    url: /drug_discovery/
-
   - title: "Fishing"
     url: /fishing/
-        
-  - title: "CV"
-    url: /cv/
-  
-  - title: "Contact"
-    url: /contact/
+
+  - title: "Gardening"
+    url: /gardening/

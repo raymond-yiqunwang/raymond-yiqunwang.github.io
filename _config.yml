@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Home"
 title_separator          : "-"
-name                     : &name "Raymond Yiqun Wang"
+name                     : &name "Raymond Wang"
 description              : 
 url                      : "https://raymond-yiqunwang.github.io/"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -69,19 +69,19 @@ social:
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 # Analytics
-analytics:
-  provider               :  "google-universal"
-  google:
-    tracking_id          :  "UA-222442722-1"
+# analytics:
+#   provider               :  "google-universal"
+#   google:
+#     tracking_id          : 
 
 
 
 # Site Author
 author:
-  name             : "Raymond Yiqun Wang"
+  name             : "Raymond Wang"
   avatar           : "RWang.png"
   bio              : "Computational Chemist <br> <br> Research Scientist at ByteDance AI Lab"
-  location         : "Mountain View, CA"
+  location         : "Chicago, IL"
   employer         : 
   googlescholar    : "https://scholar.google.com/citations?user=Z_9piXQAAAAJ&hl=en"
   email            : "raywang.sci@gmail.com"
@@ -92,7 +92,7 @@ author:
   flickr           :
   facebook         : 
   foursquare       :
-  github           : "raymond-yiqunwang"
+  github           :
   google_plus      :
   keybase          :
   instagram        : 
