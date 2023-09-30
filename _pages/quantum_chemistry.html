@@ -6,132 +6,110 @@ author_profile: true
 
 {% include base_path %}
 
-<h2>Quantum Chemistry</h2>
-
+<br>
 <p align="justify">
-<img src="/figures/home_QChem.jpeg" width="100%">
+<img src="/figures/qchem_intro.png" width="100%">
 <br><em><font size="2">
-<strong>Figure 2</strong> |
-(a) Partition the active orbitals of benzene molecule into fragments and
-(b) reconstruct the total wave function by iterative refinement.
+    <strong>Figure</strong> |
+    Schematic of quantum chemistry research. The objective is to model the microscopic
+    electronic wavefunctions of a molecule to accurately calculate its physical properties.
 </font></em>
 </p>
 
 <p style="text-align: justify">
-In a nutshell, as a theoretical chemist, 
-I develop quantitative numerical models to simulate and understand
-quantum molecular systems by solving the
-time-independent Schrödinger equation.
-My research was mainly focused on developing active space decomposition (ASD) algorithm 
-with second-order orbital optimization,
-and Douglas-Kroll-Hess (DKH) scalar relativistic approximation method.
-I contributed to the open-source quantum chemistry simulation package
-<a href="https://github.com/qsimulate-open/bagel">BAGEL</a>, currently maintained by Dr. Toru Shiozaki
-and his deep tech startup <a href="https://qsimulate.com/">QSimulate</a>.
-I find the complex theoretical framework and computational modelling techniques 
-extremely exciting, which was the main driving force for me to attend Northwestern
-for graduate studies.
-For more details on my research in this domain, please visit the 
-<a href="https://raymond-yiqunwang.github.io//quantum_chemistry/">Quantum Chemistry</a>
-page, or connect with me to have a chat!
+    In a nutshell, as a theoretical chemist, I develop numerical models to simulate 
+    and understand quantum molecular systems by solving the time-independent Schrödinger equation.
+    My research is mainly focused on developing active space decomposition (ASD) algorithm 
+    with second-order orbital optimization, and Douglas-Kroll-Hess (DKH) scalar relativistic approximation methods.
+    I contributed to the open-source quantum chemistry simulation package
+    <a href="https://github.com/qsimulate-open/bagel">BAGEL</a>, currently maintained by Dr. Toru Shiozaki
+    and his deep tech startup <a href="https://qsimulate.com/">QSimulate</a>.
+    I find the theoretical framework and computational modelling techniques extremely exciting, 
+    which was the main driving force for me to attend Northwestern for graduate studies.
 </p>
 
 
-<h2>Introduction to The Wave Function Approach</h2>
+<h2>The Wave Function Approach</h2>
 
 <p style="text-align: justify">
-
-
-Our main objective is to solve the time-independent Schrödinger equation (<strong>Figure 1a</strong>),
-from which we could determine the physical properties of a molecule, in theory.
-Computationally solving this equation comprises constructing the Hamiltonian operator 
-and formulating the wave functions.
-Numerically speaking, we employ an eigen-solver (<strong>Figure 1b</strong>) to approximately diagonalize 
-a huge Hermitian matrix (the Hamiltonian) within a subspace of the entire Hilbert space 
-to obtain the ground state wave function (based on the linear variational method).
-
-<br><br>
-
-However, the time complexity of this step grows exponentially w.r.t. the system size,
-which makes simulating large molecules (e.g., proteins) 
-at quantum mechanical level extremely challenging.
-Therefore, theoretical chemists develop novel methods to 
-find a balance between "accuracy" and "efficiency".
-In other words, we would like to simulate a quantum molecular system
-as accurately as possible, with an affordable computational cost.
+    Our main objective is to solve the time-independent Schrödinger equation,
+    from which we could determine the physical properties of a molecule, <em>in theory</em>.
+    Computationally solving this equation comprises constructing the Hamiltonian operator 
+    and formulating the wave functions.
+    Numerically speaking, we employ an eigensolver to approximately diagonalize 
+    a huge Hermitian matrix (the Hamiltonian) within a subspace of the entire Hilbert space 
+    to obtain the ground state wave function (based on the linear variational method).
+    <br><br>
+    However, the time complexity of this step grows exponentially w.r.t. the system size,
+    which makes simulating large molecules (e.g., proteins) 
+    at quantum mechanical level extremely challenging.
+    Therefore, theoretical chemists develop novel methods to 
+    find a balance between "<em>accuracy</em>" and "<em>efficiency</em>".
+    In other words, we would like to simulate a quantum molecular system
+    as accurately as possible, within an affordable computational budget.
 </p>
 
 <br>
-
-<p align="justify">
-<img src="/figures/QChem_ASD.jpeg" width="100%">
+<p align="center">
+<img src="/figures/qchem_asd.png" width="100%">
 <br><em><font size="2">
-<strong>Figure 1</strong> |
-Overview of Active Space Decomposition (ASD) algorithm.
+    <strong>Figure</strong> |
+    Overview of the Active Space Decomposition (ASD) algorithm.
 </font></em>
 </p>
 
 <h2>Active Space Decomposition</h2>
 
 <p style="text-align: justify">
-
-The main idea of Active Space Decomposition (ASD) algorithm is about 
-"<strong>divide and conquer</strong>". 
-Specifically, we virtually divide the entire molecule into
-several fragments, i.e., functional groups (<strong>Figure 1c</strong>).
-Then, within each molecular fragment, we optimize for the most significant
-electronic configurations to properly represent the state of the fragment.
-The way we determine the importance of configurations is similar in nature
-to that in density matrix renormalization group (DMRG) algorithm.
-For small molecules, we could take all electronic configurations into consideration,
-and reconstruct the exact total wave function without loss of information.
-For larger systems, we discard the less significant configurations of each fragment,
-and combine the most informative states from all fragments to reconstruct the
-molecular electronic wave function.
-This way, we can control how much information we want to keep, 
-hence achieving a balance between "accuracy" and "efficiency".
-
-<br><br>
-
-To further optimize for the ground state electronic structures, I also employed
-second-order orbital optimization on top of the ASD algorithm (<strong>Figure 1d</strong>).
-In a nutshell, this step is about iteratively 
-solving the eigen-decomposition problem within the current subspace
-and optimizing for a better subspace in which the ground truth lies.
+    The main idea behind Active Space Decomposition (ASD) is about 
+    "<strong>divide and conquer</strong>". 
+    Specifically, we virtually divide the entire molecule into several fragments, 
+    i.e., functional groups. Then, within each molecular fragment, 
+    we optimize for the most significant electronic configurations to properly represent 
+    the state of the fragment. The way we determine the importance of configurations 
+    is similar in nature to that in density matrix renormalization group (DMRG) algorithm.
+    For small molecules, we could take all electronic configurations into consideration,
+    and reconstruct the exact total wave function without loss of information.
+    For larger systems, we discard the less significant configurations of each fragment,
+    and combine the most informative states from all fragments to reconstruct the
+    molecular electronic wave function.
+    This way, we can control how much information we want to keep, 
+    hence achieving a balance between "accuracy" and "efficiency".
+    <br><br>
+    To further optimize for the ground state electronic structures, I also employed
+    second-order orbital optimization on top of the ASD algorithm.
+    In short, this method iteratively solves the eigendecomposition problem 
+    within the current subspace and optimizes for a better subspace in which the ground truth lies.
 </p>
 
-<h2>Douglas-Kroll-Hess Scalar Relativistic Approximation</h2>
+<h2>Relativistic Quantum Chemistry</h2>
 
 <p style="text-align: justify">
-
-I am also interested in considering relativistic effects for quantum molecular systems.
-Relativistic effects are particularly important for molecules containing
-transition-metal ions, e.g., Cu, Fe, which are essential elements in human body.
+    I am also interested in incorporating relativistic effects for quantum molecular systems.
+    Relativistic effects are particularly important for molecules containing
+    transition-metal ions, e.g., Cu, Fe, which are essential elements in human body.
+    For instance, hemoglobin is a protein in red blood cells which contains Fe ions 
+    and binds to oxygen, allowing the blood to transport oxygen from the lungs to the 
+    rest of our body.
 </p>
 
-<p align="justify">
-<img src="/figures/QChem_DKH.jpeg" width="100%">
+<br>
+<p align="center">
+<img src="/figures/qchem_dkh.png" width="100%">
 <br><em><font size="2">
-<strong>Figure 2</strong> |
-Workflow of the self-consistent field solver with
-Douglas-Kroll-Hess scalar relativistic approximation.
+    <strong>Figure</strong> |
+    Workflow of the SCF solver with
+    DKH scalar relativistic approximation.
 </font></em>
 </p>
 
 <p style="text-align: justify">
-
-I developed scalar relativistic models based on Douglas-Kroll-Hess algorithm.
-Compared with non-relativistic models, our formulation is slightly more complicated
-and requires higher numerical accuracy.
-The theoretical details is out of the scope of this post, but I am happy to discuss
-if you are interested.
-I personally find making derivations and implementing these models extremely exciting,
-especially when the first time my model works.  :)
-
-<br><br>
-
-<strong>At last, please feel free to reach out to me for further discussions 
-if you find any of the aforementioned topics interesting!</strong>
+    I developed scalar relativistic models based on the Douglas-Kroll-Hess (DKH) algorithm.
+    Compared with non-relativistic models, our formulation is slightly more complicated
+    but achieves better numerical accuracy at affordable computational cost.
+    The theoretical details is out of the scope of this post, but I am happy to discuss
+    if you are interested.
+    I personally find making derivations and implementing these models extremely exciting,
+    especially when the first time my model works.
 </p>
-
 

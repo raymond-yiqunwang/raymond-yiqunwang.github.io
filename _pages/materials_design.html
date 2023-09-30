@@ -6,164 +6,165 @@ author_profile: true
 
 {% include base_path %}
 
-<h2>Materials Science & Engineering</h2>
-
+<br>
 <p align="justify">
-<img src="/figures/home_MSE.jpeg" width="100%">
+<img src="/figures/mse_roadmap.png" width="100%">
 <br><em><font size="2">
-<strong>Figure 3</strong> |
-Data-driven electronic materials design and discovery roadmap.
-By leveraging first principles simulations, statistical learning models,
-and adaptive optimization algorithms, we achieve a more cost-effective
-design framework for novel electronic materials.
-</em>
-</font></p>
-
-<p style="text-align: justify">
-During my Ph.D. studies, I developed a data-driven materials design framework by threading 
-multiple research subdomains, i.e., first principles density functional theory (DFT) simulations, 
-materials informatics, and optimization theory.
-Electronic materials research is intimately connected to condensed matter physics and quantum chemistry,
-with more focus on inorganic crystals with periodic boundary conditions.
-The materials systems under investigation have high degrees of freedom in terms of
-chemical compositions, microscopic lattice structures, as well as electronic/magnetic interactions.
-I start to realize that we may never have a universal solver to achieve 
-"one model to solve them all". Therefore, interdisciplinary research is worth more 
-attention owing to its power in bringing scientists and engineers with various backgrounds 
-together to solve existing challenges.
-I enjoy learning new concepts and research methodologies from other domain experts.
-For more details on my work in this realm, please visit the 
-<a href="https://raymond-yiqunwang.github.io//materials_science/">Materials Science</a> page.
-</p>
-
-
-<h2><i>Ab Initio</i> Density Functional Theory Simulations</h2>
-
-
-<p align="justify">
-<img src="/figures/MSE_DFT.jpeg" width="100%"/>
-<br><em><font size="2">
-<strong>Figure 1</strong> |
-(a) The range in resistivity accessible across the
-phase transition of a variety of
-materials exhibiting metal-insulator transitions.
-(b) We study the structure-property
-relationship of crystals using first principles simulations and
-(c) compare with experimental results.
-</font></em>
+    <strong>Figure</strong> |
+    Data-driven electronic materials design and discovery roadmap.
+    By leveraging first principles simulations, statistical learning models,
+    and adaptive optimization algorithms, we achieve a more cost-effective
+    design framework for novel electronic materials.
+</em></font>
 </p>
 
 <p style="text-align: justify">
-
-During my Ph.D. studies, I also have experience employing density functional theory (DFT) 
-simulations on electronic materials systems. Unlike the theoretical nature of
-my quantum chemistry research projects, this work is more application-driven, with the goal
-to identify ideal compounds for novel electronic materials platforms.
-Indeed, inorganic crystals are quite different from molecular systems 
-("<strong>more is different</strong>"), owing to the periodic boundary conditions.
+    During my Ph.D. studies, I developed a data-driven framework for electronic materials design 
+    by weaving together several research subdomains: first principles density functional theory (DFT) simulations, 
+    materials informatics, and optimization theory. 
+    The intricacies of electronic materials, deeply rooted in condensed matter physics and quantum chemistry, 
+    often revolve around inorganic crystals with periodic boundary conditions.
+    The complexity of materials systems helps me realize the immense value of interdisciplinary research, 
+    whose strength lies in uniting scientists and engineers from diverse backgrounds, 
+    fostering collaboration to address prevailing challenges.
 </p>
+
 
 <h2>Adaptive Optimization for Materials Design</h2>
 
-<p style="text-align: justify">
-
-I developed an adaptive optimization engine for electronic materials design.
-</p>
+<br>
 
 <p align="justify">
-<img src="/figures/MSE_AOE.jpeg" width="100%"/>
+<img src="/figures/mse_aoe.png" width="100%"/>
 <br><em><font size="2">
-<strong>Figure 2</strong> |
-Upper panel: The workflow of a conventional feature-based machine learning model.
-Lower panel: The adaptive materials discovery scheme.
+    <strong>Figure</strong> |
+    Upper panel: The workflow of a conventional feature-based machine learning model.
+    Lower panel: The adaptive materials discovery scheme.
 </font></em>
 </p>
 
 
 <p style="text-align: justify">
-The optimization scheme starts from an initial set of design of experiments, 
-where system variables, design objectives, 
-and design space are first defined for the problem.
-<strong>Property evaluation</strong>: The target material properties (design objectives) 
-are evaluated either by experimental measurement or theoretical simulations. 
-Candidate composition and its evaluated properties are then added to a <strong>Data repository</strong>, 
-which initially may either be empty or only contains entries 
-for existing materials within the design space. 
-Its size grows as more candidate materials are evaluated during the adaptive optimization process. 
+    This general workflow helps materails scientists effectively identify 
+    candidate compounds exhibiting superior functionality by design.
+    The optimization scheme starts from an initial set of design of experiments, 
+    where system variables, design objectives, 
+    and design space are first defined for the problem.
+    <strong>Property evaluation</strong>: The target material properties (i.e., design objectives) 
+    are evaluated either by experimental measurement or theoretical simulations. 
+    Candidate composition and its evaluated properties are then added to a <strong>Data repository</strong>, 
+    which initially may either be empty or only contain entries 
+    for existing materials within the design space. 
+    Its size grows as more candidate materials are evaluated during the adaptive optimization process. 
 </p>
 
 <p align="justify">
-<img src="/figures/MOBO.gif" width="90%"/>
+<img src="/figures/mse_mobo.gif" width="80%"/>
 <br><em><font size="2">
-<strong>Animation</strong> |
-The adaptive optimization history, where grey diamonds are the initial DOE set,
-blue circles are newly explored compositions,
-and orange stars form the design Pareto front.
+    <strong>Animation</strong> |
+    The adaptive optimization trajectory, where grey diamonds are the initial DOE set,
+    blue circles are newly explored compositions,
+    and orange stars form the design Pareto front.
 </font></em>
 </p>
 
 <p style="text-align: justify">
-<strong>Featureless learning</strong> involves directly learning from the chemical composition 
-of materials comprising the data repository by mapping each compositional variable 
-into a two-dimensional latent space using maximum likelihood estimation, 
-which enables the construction of a latent variable Gaussian process (LVGP) surrogate model. 
-knowledge within the data repository. 
-<strong>Composition optimization</strong>: Multi-objective Bayesian optimization 
-is then performed with the LVGP models to obtain the next candidate material composition 
-with the highest expected maximin improvement.
-The iterative optimization continues until all compounds satisfying the objectives are discovered, 
-forming the Pareto front, or research resources are exhausted.
+    <strong>Featureless learning</strong> involves directly learning from the chemical composition 
+    of materials comprising the data repository by mapping each compositional variable 
+    into a two-dimensional latent space using maximum likelihood estimation, 
+    which enables the construction of a latent variable Gaussian process (LVGP) surrogate model. 
+    <strong>Composition optimization</strong>: Multi-objective Bayesian optimization 
+    is then performed with the LVGP models to obtain the next candidate material composition 
+    with the highest expected maximin improvement.
+    The iterative optimization continues until all compounds satisfying the objectives are discovered, 
+    forming the Pareto front, or research resources are exhausted.
+    See details <a href="https://pubs.aip.org/aip/apr/article/7/4/041403/831969">here</a>.
 </p>
 
 
 <h2>Materials Informatics</h2>
 
 <p style="text-align: justify">
-Keeping the numerical optimization methods and their limitations in mind,
-I realized the significance of statistical learning for us to further understand
-materials physics.
-To that end, I made some statistical analysis on crystal structure databases using 
-a deep neural network.
-We used structure factors in the form of 3D point cloud to uniquely represent
-crystal structures and chemical compositions, and analyzed the correlation between
-symmetry, electron density, and materials properties.
-This work is still under review at <i>Physical Review Research</i>.
+    When we talk about materials "structure-property relationship", a more precise description
+    ought to be "structure-composition-property relationship", since the 3D arrangement of atoms 
+    as well as their atomic species co-determine materials properties.
+    One would naturally ask: how does structure alone impact materials properties?
+    The answer to this question helps us optimize materials functionality through perturbing
+    their atomic structures (e.g., applying pressure).
+    <br><br>
+    Machine learning offers a unique perspective to this question.
+    By marginalizing chemical composition information in crystalline materials and perform 
+    statistical analysis via a trained deep neural network, we study the response of various
+    materials properties to crystal structures without chemical compositions.
+    Our secret sauce is that X-ray diffraction patterns preserve 3D structure information,
+    while discarding partial compositional information (due to the infamous phase problem).
+    We train a deep neural network to learn from the diffraction patterns for multiple materials 
+    property classificaitons, and analyze how different structures influence these properties.
+    We find that crystal symmetry is more important than the diffraction intensities contained within 
+    for the model to make a successful classification. 
+    <br><br>
+    Our work also showcases the potential of using machine learning models to help understand materials physics, 
+    rather than performing predictive or generative tasks as in most materials informatics research. 
+    We also argue that learning the crystal structure genome in a chemistry-agnostic manner demonstrates that 
+    some crystal structures inherently host high propensities for optimal materials properties, 
+    which enables the decoupling of structure and composition for future codesign of multifunctionality.
+    See details <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.4.023029">here</a>.
 </p>
 
-<p align="justify">
-<img src="/figures/MSE_deepKNet.jpeg" width="100%"/>
+<p align="center">
+<img src="/figures/mse_deepknet.png" width="100%"/>
 <br><em><font size="2">
-<strong>Figure 3</strong> |
-Learning the Fourier space crystal structure genome for property classificaitons.
+    <strong>Figure</strong> |
+    Learning Fourier space crystal structure genome for property classificaitons.
 </font></em>
 </p>
 
 <br>
 
 <p style="text-align: justify">
-
-Lastly, I explore the potential of using symbolic learning to reveal some governing physical
-laws from a large amount of data.
-Symbolic regression has recently garnered much attention from the scientific research
-community owing to its form-free learning mechanism,
-which makes it an ideal tool for materials scientists to analyze their experimental data.
+    One of my most influential work explores the potential of using symbolic learning 
+    to reveal some governing physical laws from a large amount of data.
+    Symbolic regression has recently garnered much attention from the scientific research
+    community owing to its form-free learning mechanism,
+    which makes it an ideal tool for materials scientists to analyze their experimental data.
+    See <a href="https://www.cambridge.org/core/journals/mrs-communications/article/abs/symbolic-regression-in-materials-science/A5836F4AF5E9395A9B27541C5042A7F3">here</a> for more details.
 </p>
 
-<p align="justify">
-<img src="/figures/MSE_GPSR.jpeg" width="100%"/>
+<p align="center">
+<img src="/figures/mse_gpsr.png" width="100%"/>
 <br><em><font size="2">
-<strong>Figure 4</strong> |
-Symbolic regression and its applications in materials science.
+    <strong>Figure</strong> |
+    Symbolic regression and its applications in materials science.
 </font></em>
 </p>
 
 
-<br>
 
-<p style="text-align: justify">
+<h2><i>Ab Initio</i> Density Functional Theory Simulations</h2>
 
-<strong><i> If you find any of these research topics interesting, please do not
-hesitate to reach out to me and I'd be happy to have further discussions!</i></strong>
+
+<p align="justify">
+<img src="/figures/mse_dft.png" width="100%"/>
+<br><em><font size="2">
+    <strong>Figure</strong> |
+    (a) The range in resistivity accessible across the
+    phase transition of a variety of
+    materials exhibiting metal-insulator transitions.
+    (b) We study the structure-property
+    relationship of crystals using first principles simulations and
+    (c) compare with experimental results.
+</font></em>
 </p>
 
-
+<p style="text-align: justify">
+    I also have experience employing density functional theory (DFT) 
+    simulations on electronic materials systems. Unlike the theoretical nature of
+    my quantum chemistry research projects, this work is more application-driven
+    and involves more simulation-running tasks, whose goal is 
+    to identify ideal compounds for novel electronic materials platforms.
+    Indeed, inorganic crystals are quite different from molecular systems 
+    (<a href="https://www.science.org/doi/10.1126/science.177.4047.393"><strong>more is different</strong></a>).
+    There is so much that I would like to talk about regarding this topic 
+    (e.g., its relationship with the "scaling law" in AI research).
+    Don't hesitate to reach out for some further discussions!
+</p>
